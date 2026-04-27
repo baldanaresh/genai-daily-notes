@@ -16,6 +16,10 @@ def chunk_text(text, chunk_size=500, overlap=100):
 
     while start < len(text):
         end = start + chunk_size
+         # Try not to cut in middle of sentence
+        if end < len(text):
+            while end < len(text) and text[end] not in [".", "\n"]:
+                end += 1
         chunk = text[start:end]
         chunks.append(chunk)
 
