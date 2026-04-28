@@ -30,7 +30,7 @@ def chunk_text(text, chunk_size=1000, overlap=200):
 def get_embeddings(chunks):
     client = Client(api_key=os.getenv("GEMINI_API_KEY"))
     
-  
+#    the support mode is models/gemini-embedding-001
     response = client.models.embed_content(
         model="models/gemini-embedding-001",
         contents=chunks
